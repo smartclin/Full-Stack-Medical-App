@@ -19,15 +19,18 @@ const Home = () => {
       {/*=== Hero Section ===*/}
       <section className="hero_section pt-[60px] 2xl:h-[800px]">
         <div className="container">
+          
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
+
             {/* === hero content === */}
+
             <div>
               <div className="lg:w-[570px]">
                 <h1
                   className="text-[36px] leading-[46px] 
                    text-headingColor font-[800] 
                      md:text-[50px] md:leading-[70px] max-sm:text-[40px] max-sm:text-center
-                     max-sm:pb-10"
+                     max-sm:pb-10 max-sm:mt-[-4vh]"
                 >
                   We help patients live a healthy, longer life.
                 </h1>
@@ -50,16 +53,14 @@ const Home = () => {
               </div>
 
               {/*=== hero counter ===*/}
-              <div
-                className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]
-               text-center justify-center items-center "
-              >
+              <div className="mt-[30px] lg:mt-[70px] flex flex-col 
+              lg:flex-row lg:items-center gap-5 lg:gap-[30px]
+               text-center justify-center items-center max-sm:mt-[6vh]">
                 <div>
                   <h2
                     className="text-[36px] leading-[56px] 
-                          lg:text-[44px] lg:heading-[54px] font-[700] text-headingColor"
-                  >
-                    30+
+                          lg:text-[44px] lg:heading-[54px] 
+                          font-[700] text-headingColor">30+
                   </h2>
                   <span className="w-[150px] h-2 bg-yellowColor rounded-full block mt-[-14px]"></span>
                   <p className="text_para">Years of Experience</p>
@@ -86,8 +87,11 @@ const Home = () => {
                   <span className="w-[150px] h-2 bg-irisBlueColor rounded-full block mt-[-14px]"></span>
                   <p className="text_para">Patient Satisfaction</p>
                 </div>
+
               </div>
+
             </div>
+
             {/*=== hero counter ===*/}
 
             <div className="flex gap-[30px] justify-end">
@@ -95,8 +99,7 @@ const Home = () => {
                 <img
                   className="w-full mt-[6vh]"
                   src={heroImg01}
-                  alt="medicImg1"
-                />
+                  alt="medicImg1"/>
               </div>
 
               <div className="mt-[30px]">
@@ -104,10 +107,11 @@ const Home = () => {
                 <img src={heroImg03} alt="" className="w-full" />
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
-
       {/*=== Hero Section end ===*/}
 
       <section>
@@ -228,7 +232,9 @@ const Home = () => {
       {/*=== feature section ===*/}
       <section>
         <div className="container">
+
           <div className="flex items-center justify-between flex-col lg:flex-row">
+
             {/*=== feature content ===*/}
             <div className="xl:w-[670px]">
               <h2 className="heading pl-2">
@@ -294,10 +300,13 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
       {/*=== feature section end ===*/}
+      
       {/*=== our great doctors ===*/}
       <section>
         <div className="container">
