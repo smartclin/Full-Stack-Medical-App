@@ -30,7 +30,7 @@
   }
 
   section {
-    @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover;
+    @apply bg-no-repeat bg-center bg-cover;
   }
 }
 
