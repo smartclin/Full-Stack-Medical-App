@@ -1,25 +1,27 @@
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 
 const ServiceCard = ({ item, index }) => {
   const { name, desc, bgColor, textColor } = item;
   return (
-    <div className="py-[30px] px-3 lg:px-5 card  
-    rounded-md shadow-md w-auto ">
+    <div
+      className="py-[30px] px-3 lg:px-5 card  
+    rounded-md shadow-md w-auto "
+    >
       <span
-          className="w-[44px] h-[44px] flex backdrop-blur-md
+        className="w-[44px] h-[44px] flex backdrop-blur-md
       items-center justify-center text-[18px] 
       font-[600] max-sm:m-auto "
-          style={{
-            background: `${bgColor}`,
-            color: `${textColor}`,
-            borderRadius: "6px 0 0 6px",
-            marginBottom: "2vh",
-          }}
-        >
-          {index + 1}
-        </span>
+        style={{
+          background: `${bgColor}`,
+          color: `${textColor}`,
+          borderRadius: "6px 0 0 6px",
+          marginBottom: "2vh",
+        }}
+      >
+        {index + 1}
+      </span>
 
       <h2
         className="text-[26px] leading-9 
@@ -52,13 +54,13 @@ const ServiceCard = ({ item, index }) => {
 };
 
 ServiceCard.propTypes = {
-   item: PropTypes.shape({
-     name: PropTypes.string.isRequired,
-     desc: PropTypes.string.isRequired,
-     bgColor: PropTypes.string.isRequired,
-     textColor: PropTypes.string.isRequired,
-   }).isRequired,
-   index: PropTypes.number.isRequired,
- };
- 
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    bgColor: PropTypes.string.isRequired,
+    textColor: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
+
 export default ServiceCard;
