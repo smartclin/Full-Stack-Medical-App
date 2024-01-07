@@ -39,38 +39,52 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>React-redux</summary>
-    <ul>
-      <li>This project use <a href="https://react-redux.js.org/">React</a></li>
-    </ul>
-</details>
-
-<details>
-  <summary>HTML</summary>
-  <ul>
-    <li>This project use <a href="https://github.com/microverseinc/curriculum-html-css/blob/main/html5.md">HTML.</a></li>
+<ul>   
+  <li>
+    <img src="https://skillicons.dev/icons?i=reactjs"/>
+    <a href="https://reactjs.org">React.js</a>
+  </li>
+  <li>
+       <img src="https://skillicons.dev/icons?i=js"/>
+       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>
+  </li>
+  <li>
+       <img src="https://skillicons.dev/icons?i=nodejs"/>
+       <a href="https://nodejs.org/en">Node.js</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=expressjs"/>
+    <a href="https://expressjs.com">Express.js</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=mongodb"/>
+    <a href="https://www.mongodb.com">MongoDB</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=eslint"/>
+    <a href="https://eslint.org">ESLint</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=stylelint"/>
+    <a href="https://stylelint.io">Stylelint</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=tailwindcss"/>
+    <a href="https://tailwindcss.com">Tailwind CSS</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=netlify"/>
+    <a href="https://www.netlify.com">Netlify</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=html"/>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
+  </li>
+  <li>
+    <img src="https://skillicons.dev/icons?i=css"/>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
+  </li>
   </ul>
-</details>
-
-<details>
-  <summary>CSS</summary>
-  <ul>
-    <li>The <a href="https://github.com/microverseinc/curriculum-html-css/blob/main/html5.md">CSS</a> is used to provide the design in the whole page.</li>
-  </ul>
-</details>
-
-<details>
-  <summary>Linters</summary>
-  <ul>
-    <li>The <a href="https://github.com/microverseinc/linters-config">Linters</a> are tools that help us to check and solve the errors in the code</li>
-    This project count with two linters: 
-    <ul>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </ul>
-</details>
  
 ### Key Features <a name="key-features"></a>
 
