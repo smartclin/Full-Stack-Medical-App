@@ -41,7 +41,7 @@
 
 <ul>   
   <li>
-    <img src="https://skillicons.dev/icons?i=reactjs"/>
+    <img src="https://skillicons.dev/icons?i=react"/>
     <a href="https://reactjs.org">React.js</a>
   </li>
   <li>
@@ -61,11 +61,11 @@
     <a href="https://www.mongodb.com">MongoDB</a>
   </li>
   <li>
-    <img src="https://skillicons.dev/icons?i=eslint"/>
+    <img src="./src/assets/images/eslint.png"/>
     <a href="https://eslint.org">ESLint</a>
   </li>
   <li>
-    <img src="https://skillicons.dev/icons?i=stylelint"/>
+    <img src="./src/assets/images/stylelint.png"/>
     <a href="https://stylelint.io">Stylelint</a>
   </li>
   <li>
