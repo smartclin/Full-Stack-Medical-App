@@ -35,6 +35,8 @@
 
 [Here](https://drive.google.com/file/) is the link to the video presentation.
 
+---
+
 # 🛠 Built With <a name="built-with"></a>
 
 # Tech Stack <a name="tech-stack"></a>
