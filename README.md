@@ -31,9 +31,10 @@
 
 > Welcome to Medicare, your comprehensive platform for medical appointment management! At Medicare, we've created a unique experience    that allows you to easily book appointments with healthcare professionals, all from the convenience of our intuitive app.
 
-Our full stack platform uses cutting-edge technologies such as React JS for a dynamic and friendly user interface, TailwindCSS for a modern and attractive design, Node JS and Express JS for a robust and efficient backend, and MongoDB for an agile and scalable database . In addition, we have implemented a secure authentication system with JWT to guarantee the privacy of your data.
+> Our full stack platform uses cutting-edge technologies such as React JS for a dynamic and friendly user interface, TailwindCSS for a   modern and attractive design, Node JS and Express JS for a robust and efficient backend, and MongoDB for an agile and scalable database . In addition, we have implemented a secure authentication system with JWT to guarantee the privacy of your data.
 
-At Medicare, we pride ourselves on offering a seamless and efficient user experience, from appointment booking to the payment process. We have integrated a Stripe payment gateway from the ground up, ensuring secure and hassle-free transactions.
+> At Medicare, we pride ourselves on offering a seamless and efficient user experience, from appointment booking to the payment process. We have integrated a Stripe payment gateway from the ground up, ensuring secure and hassle-free transactions.
+
 [Here](https://drive.google.com/file/) is the link to the video presentation.
 
 ## 🛠 Built With <a name="built-with"></a>
