@@ -5,7 +5,7 @@
    <h1><b>Full Stack Medical App</b></h1>
 </div>
 
-## 📗 Table of Contents
+# 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Metrics Tracker ](#-metrics-tracker-)
@@ -25,7 +25,7 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-## 📖 Full Stack Medical App <a name="about-project"></a>
+# 📖 Full Stack Medical App <a name="about-project"></a>
 
 > Welcome to Medicare, your comprehensive platform for medical appointment management! At Medicare, we've created a unique experience    that allows you to easily book appointments with healthcare professionals, all from the convenience of our intuitive app.
 
