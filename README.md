@@ -88,19 +88,12 @@
  
 ## Key Features <a name="key-features"></a>
 
-- **React.js**
-- **Node.js**
-- **Express.js**
-- **Mongo.db**
-- **Tailwind.css**
-- **Stripe**
 - **Solid Principles**
-- **Logged**
-- **CRA**
-- **Styles**
-- **Router**
+- **Linters run correctly**
+- **The app run satisfactorily**
 - **Jest & React Test Library**
-- **Deployment**
+- **Once the work is completed, the deployment will proceed.**
+- **React Router**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
