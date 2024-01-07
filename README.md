@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-   <img src="./src/assets/images/logo2.png"></img>
+   <img src="./src/assets/images/logo2.png" width="300"></img>
    <h1><b>Full Stack Medical App</b></h1>
 </div>
 
