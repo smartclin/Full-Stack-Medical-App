@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
     
-  <img href="./src/assets/logo2.png"></img>
+  <img href="../src/assets/logo2.png"></img>
   <h1><b>Full Stack Medical App</b></h1>
 
 </div>
