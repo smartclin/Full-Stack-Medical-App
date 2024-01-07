@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<img href="../src/assets/images/logo2.png"></img>
+<img href="./assets/images/logo2.png"></img>
 
 <div align="center">
   <h1><b>Full Stack Medical App</b></h1>
