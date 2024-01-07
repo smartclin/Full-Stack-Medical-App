@@ -1,11 +1,9 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <br/>
-    
-  <img href="./src/assets/images/logo2.png"></img>
-  <h1><b>Full Stack Medical App</b></h1>
+<img href="../src/assets/images/logo2.png"></img>
 
+<div align="center">
+  <h1><b>Full Stack Medical App</b></h1>
 </div>
 
 # 📗 Table of Contents
