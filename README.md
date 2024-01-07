@@ -72,7 +72,7 @@
   </ul>
 </details>
  
-### Key Features <a name="key-features"></a>
+# Key Features <a name="key-features"></a>
 
 - **React.js**
 - **Node.js**
