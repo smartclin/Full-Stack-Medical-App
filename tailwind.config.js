@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+        'blur': 'blur(5px)',
       colors: {
         primaryColor: "#0067FF",
         yellowColor: "#FEB60D",
