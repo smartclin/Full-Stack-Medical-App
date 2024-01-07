@@ -93,7 +93,6 @@
 - **The app run satisfactorily**
 - **Jest & React Test Library**
 - **Once the work is completed, the deployment will proceed.**
-- **React Router**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
