@@ -183,7 +183,8 @@
 > We thank our team of developers for successfully working towards a smooth and efficient user experience, from appointment
   booking to the payment process.
 
-  At Medicare, we combine advanced technology with modern design to provide you with a complete and effective solution. Your health, our priority!
+> At Medicare, we combine advanced technology with modern design to provide you with a complete and effective solution. Your health, our
+  priority!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
