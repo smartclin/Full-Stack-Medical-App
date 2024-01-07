@@ -61,11 +61,11 @@
     <a href="https://www.mongodb.com">MongoDB</a>
   </li>
   <li>
-    <img src="./src/assets/images/eslint.png" with="50"/>
+    <img src="./src/assets/images/eslint.png" width="50"/>
     <a href="https://eslint.org">ESLint</a>
   </li>
   <li>
-    <img src="./src/assets/images/stylelint.png" with="50"/>
+    <img src="./src/assets/images/stylelint.png" width="50"/>
     <a href="https://stylelint.io">Stylelint</a>
   </li>
   <li>
