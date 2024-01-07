@@ -25,6 +25,7 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
+---
 # 📖 Full Stack Medical App <a name="about-project"></a>
 
 > Welcome to Medicare, your comprehensive platform for medical appointment management! At Medicare, we've created a unique experience    that allows you to easily book appointments with healthcare professionals, all from the convenience of our intuitive app.
@@ -128,19 +129,19 @@
 
 > npm start
 
-### Setup
+## Setup
 
 > Clone this repository to your desired folder: https://github.com/maximoortelli/Full-Stack-Medical-App.git
 
-### Install
+## Install
 
 > Install this project with: install Stylelint and ESLint
 
-### Usage
+## Usage
 
 > To run the project, execute the following command: just need a web Browser
 
-### Run tests
+## Run tests
 
 > To run tests, run the following command: npm start
 > you just need a simple web browser to run this project for a test
