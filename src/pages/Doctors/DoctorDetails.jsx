@@ -1,6 +1,10 @@
 import { useState } from "react";
 import doctorImg from "../../assets/images/doctor-img02.png"
 import starIcon from "../../assets/images/Star.png";
+import DoctorAbout from "./DoctorAbout";
+import Feedback from "./Feedback";
+import SidePanel from "./SidePanel.JSX";
+
 
 const DoctorDetails = () => {
 
@@ -60,9 +64,16 @@ const DoctorDetails = () => {
               Feedback
             </button>
           </div>
+
+          <div className="mt-[50px]">
+            {tab == "about" && <DoctorAbout />}
+            {tab == "feedback" && <Feedback />}
+          </div>
         </div>
 
-        <div></div>
+        <div>
+          <SidePanel />
+        </div>
       </div>
     </div>
   </section>
