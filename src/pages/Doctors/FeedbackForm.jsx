@@ -5,7 +5,8 @@ const FeedbackForm = () => {
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
-    const [reviewText, setReviewText] = useState("");
+    // colocar [reviewText, setReviewText] = useState("");
+    const [, setReviewText] = useState("");
 
     const handleSubmitReview = async e => {
         e.preventDefault()
