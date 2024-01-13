@@ -46,7 +46,7 @@ const Feedback = () => {
         </div>
 
         {!showFeedbackForm && ( 
-        <div className='text-center'>
+        <div className='mt-[-55px]'>
                   <button className='btn' onClick={()=>setShowFeedbackForm(true)}>
                        Give Feedback
                   </button>

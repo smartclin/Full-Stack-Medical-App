@@ -81,17 +81,6 @@ const SidePanel = () => {
                          7:00 AM - 9:30 PM
                     </p>
                 </li>
-
-                <li className="flex items-center justify-between mb-2">
-                    <p className="text-[15px] leading-6 text-textColor
-                    font-semibold">
-                         Sunday
-                    </p>
-                    <p className="text-[15px] leading-6 text-textColor
-                    font-semibold">
-                         Doesn´t work.
-                    </p>
-                </li>
             </ul>
          </div>
 

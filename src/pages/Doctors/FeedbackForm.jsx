@@ -14,7 +14,7 @@ const FeedbackForm = () => {
 
   return (
     <form action=" ">
-         <div>    
+         <div className="mt-[-10px]">    
              <h3 className="text-headingColor text-[16px] leading-6 
                  font-semibold mb-4 ">
                      How would you rate the overall experience?
