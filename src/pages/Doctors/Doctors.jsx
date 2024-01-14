@@ -24,9 +24,9 @@ const Doctors = () => {
     </section>
 
     <section>
-      <div className="container">
+      <div className="container text-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 
-    md:grid-cols-3 lg:grid-cols-4 gap-5">
+    md:grid-cols-3 gap-5">
       {doctors.map((doctor) => (
         <DoctorCard key={doctor} doctor={doctor} />
       ))}
