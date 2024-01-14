@@ -88,7 +88,7 @@
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
   </li>
   <li>
-      <img src="https://skillicons.dev/icons?i=stripe"/>
+      <img src="./src/assets/images/stripe.png"/>
       <a href="https://stripe.com">Stripe</a>
   </li>
   </ul>
