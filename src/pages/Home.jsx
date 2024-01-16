@@ -11,10 +11,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
-import DoctorList from "../components/Doctors/DoctorList";
 import faqImg from "../assets/images/faq-img.png" ;
 import FaqList from "../components/Faq/FaqList";
-import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
