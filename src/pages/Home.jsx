@@ -311,20 +311,6 @@ const Home = () => {
       </section>
       {/*=== feature section end ===*/}
 
-      {/*=== our great doctors ===*/}
-      <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Great Doctors</h2>
-            <p className="text_para text-center">
-            World-class care for everyone. Our health System offers
-              unmatched,expert health care.
-            </p>
-          </div>
-
-          <DoctorList />
-        </div>
-      </section>
       {/*=== our great doctors end===*/}
 
       {/*=== faq section doctors ===*/}
@@ -344,21 +330,6 @@ const Home = () => {
         </div>
       </section>
        {/*=== faq section End ===*/}
-
-       {/*=== Testimonial ===*/}
-       <section>
-           <div className="container">
-               <div className="xl:w-[470px] mx-auto">
-                 <h2 className="heading text-center">What our patient say</h2>
-                 <p className="text_para text-center">
-                   World-class care for everyone. Our health System offers
-                   unmatched,expert health care.
-                 </p>
-               </div>
-
-            <Testimonial />
-           </div>
-       </section>
        
     </>
   );
