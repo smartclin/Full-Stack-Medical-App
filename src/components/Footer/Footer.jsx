@@ -102,13 +102,13 @@ const year = new Date().getFullYear();
       </div>
 
     <div className="lg:pl-[19%] max-sm:m-auto">
-      <h2 className="text-[20px] leading-[30px]  font-[700] mb-6 text-headingColor ">
+      <h2 className="text-[20px] leading-[30px] font-[700] mb-2 text-headingColor ">
         Quick Links
       </h2>
 
       <ul>
         {quickLinks01.map((item, index)=> ( 
-        <li key={index} className="mb-4 justify-center text-center"> 
+        <li key={index} className="mb-2 justify-center text-center"> 
             <Link to={item.path}
               className="text-[16px] leading-7
               font-[400] text-textColor"
@@ -121,13 +121,13 @@ const year = new Date().getFullYear();
     </div>
 
     <div className="lg:pr-[5vw] max-sm:m-auto">
-      <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-center text-headingColor ">
+      <h2 className="text-[20px] leading-[30px] font-[700] mb-2 text-center text-headingColor ">
         Sections
       </h2>
 
       <ul>
         {quickLinks02.map((item, index)=> ( 
-        <li key={index} className="mb-4 justify-center text-center"> 
+        <li key={index} className="mb-2 justify-center text-center"> 
             <Link to={item.path}
               className="text-[16px] leading-7
               font-[400] text-textColor"
