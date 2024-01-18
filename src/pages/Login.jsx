@@ -16,7 +16,7 @@ const Login = () => {
     <section className="px-5 lg:px-0">
        <div className="w-full max-w-[570px]
        mx-auto rounded-lg shadow-md md:p-10">
-        <h3 className="text-headingColor text-[22px] font-bold leading-9 mb-10 text-center">
+        <h3 className="text-headingColor text-[30px] font-extrabold leading-9 mb-10 text-center">
           Hello! <span className="text-primaryColor">Welcome</span> Back 🎉
         </h3>
 
@@ -34,6 +34,7 @@ const Login = () => {
              cursor-pointer"
             required/>
           </div>
+          
           <div className="mb-5">
             <input 
             type="password" 
