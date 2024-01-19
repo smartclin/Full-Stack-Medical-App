@@ -85,7 +85,7 @@ const Header = () => {
           </div>
 
           {/** === nav right ===*/}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <div className="hidden">
             <Link to='/'>
               <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
@@ -94,8 +94,13 @@ const Header = () => {
             </Link>
             </div>
             <Link to='/login'>
-              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+              <button className="bg-primaryColor py-2 px-3 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
                 Login
+              </button>
+            </Link>
+            <Link to='/register'>
+              <button className="bg-primaryColor py-2 px-2 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                Signup
               </button>
             </Link>
             <span className="md:hidden" onClick={toggleMenu}>
