@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import logo from '../../assets/images/logo.png';
-import userImg from '../../assets/images/avatar-icon.png';
 import { Link, NavLink } from 'react-router-dom';
 import { BiMenu } from "react-icons/bi";
+import { authContext } from "../../context/AuthContext";
 import '../../App.css';
 
 const navLinks = [
@@ -27,7 +27,7 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
-
+  const {user, role, token} = useContext(authContext);
 
   const handleStickyHeader = () => {
     const handleScroll = () => {
@@ -86,23 +86,30 @@ const Header = () => {
 
           {/** === nav right ===*/}
           <div className="flex items-center space-x-2">
-            <div className="hidden">
-            <Link to='/'>
-              <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
-                <img src={userImg} className='w-full rounded-full' alt="User" />
-              </figure>
-            </Link>
-            </div>
-            <Link to='/login'>
-              <button className="bg-primaryColor py-2 px-3 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
-                Login
-              </button>
-            </Link>
-            <Link to='/register'>
-              <button className="bg-primaryColor py-2 px-2 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
-                Signup
-              </button>
-            </Link>
+            {token && user ? (
+              <Link to={`${role === "doctor" ? "/doctors/profile/me" : "/users/profile/me"}`} className="flex items-center">
+                <figure className="w-[50px] rounded-full cursor-pointer">
+                  <img src={user?.photo} className='w-full rounded-full' alt="Userphoto" />
+                </figure>
+                {/*<h2 className="ml-5 font-bold">{user?.name}</h2>*/}
+              </Link>
+            ) : (
+              <>
+                <Link to='/login'>
+                  <button className="bg-primaryColor py-2 px-3 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                    Login
+                  </button>
+                </Link>
+                <Link to='/register'>
+                  <button className="bg-primaryColor py-2 px-2 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                    Signup
+                  </button>
+                </Link>
+              </>
+            )}
+      
+            
+
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className='w-6 h-6 cursor-pointer' />
             </span>
