@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import PropTypes from "prop-types";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../../config";
 import { toast } from "react-toastify";
@@ -203,6 +204,17 @@ const Profile = ({ user }) => {
       </form>
     </div>
   );
+};
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  gender: PropTypes.string.isRequired,
+  bloodType: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Profile;
