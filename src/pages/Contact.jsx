@@ -40,7 +40,7 @@ const Contact = () => {
               placeholder="Leave a comment..."
               className="form_input mt-1"/>
             </div>
-            <button className="btn rounded-full sm:w-fit">Submit</button>
+            <button className="btn rounded-full sm:w-full">Submit</button>
          </form>
             
 

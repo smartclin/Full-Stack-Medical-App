@@ -215,22 +215,6 @@ const Home = () => {
       <About />
       {/*=== About Section End ===*/}
 
-      {/*=== Services Section ===*/}
-      <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our medical services</h2>
-            <p className="text_para text-center">
-              World-class care for everyone. Our health System offers unmatched,
-              expert health care.
-            </p>
-          </div>
-
-          <ServiceList />
-        </div>
-      </section>
-      {/*=== Services Section end ===*/}
-
       {/*=== feature section ===*/}
       <section>
         <div className="container">
