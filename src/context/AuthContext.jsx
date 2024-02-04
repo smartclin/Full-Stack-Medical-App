@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+/* eslint-disable react/prop-types */
+import { createContext, useEffect, useReducer } from "react";
 
 const initialState = {
   user: localStorage.getItem('user') !== undefined ? JSON.parse(localStorage.getItem('user')) : null,

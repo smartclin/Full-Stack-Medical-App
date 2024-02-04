@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import User from "../models/UserSchema.js";
 import Booking from "../models/BookingSchema.js";
 import Doctor from "../models/DoctorSchema.js";
