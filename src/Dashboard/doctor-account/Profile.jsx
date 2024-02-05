@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -9,9 +10,20 @@ const Profile = () => {
     bio: "",
     gender: "",
     specialization: "",
+    ticketPrice: 0,
+    qualifications: [
+      { startingDate: "", endingDate: "", degree: "", university: "" },
+    ],
+    experiences: [
+      { startingDate: "", endingDate: "", position: "", hospital: "" },
+    ],
+    timeSlots: [{ day: "", startingTime: "", endingTime: "" }],
+    about: "",
   });
 
-  const handleInputChange = (e) => {};
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <div>
@@ -43,9 +55,6 @@ const Profile = () => {
             onChange={handleInputChange}
             placeholder="Email"
             className="form_input"
-            readOnly
-            aria-readonly
-            disabled="true"
           />
         </div>
         <div className="mb-5">
@@ -112,10 +121,227 @@ const Profile = () => {
                 name="ticketPrice"
                 value={formData.ticketPrice}
                 className="form_input"
+                onChange={handleInputChange}
               ></input>
             </div>
           </div>
         </div>
+
+        <div className="mb-5">
+          <h2
+            className="text-headingColor font-bold text-[24px]
+    leading-9 mt-[-10px] mb-3 text-center"
+          >
+            Qualifications
+          </h2>
+          {formData.qualifications?.map((item, index) => (
+            <div key={index}>
+              <div className="mt-5">
+                <div className=" grid grid-cols-2 gap-5">
+                  <div>
+                    <p className="form_label">Starting Date*</p>
+                    <input
+                      type="date"
+                      name="startingDate"
+                      value={item.startingDate}
+                      className="form_input"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="form_label">Ending Date*</p>
+                    <input
+                      type="date"
+                      name="endingDate"
+                      value={item.endingDate}
+                      className="form_input"
+                    />
+                  </div>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-5">
+                  <div>
+                    <p className="form_label">Degree*</p>
+                    <input
+                      type="text"
+                      name="degree"
+                      value={item.degree}
+                      className="form_input"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="form_label">University*</p>
+                    <input
+                      type="text"
+                      name="university"
+                      value={item.university}
+                      className="form_input"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  className="bg-red-600 p-2 rounded-full text-white text-[18px]
+                mt-2 mb-[30px] cursor-pointer"
+                >
+                  <AiOutlineDelete />
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
+            Add Qualifications
+          </button>
+        </div>
+
+        <div className="mb-5">
+          <h2
+            className="text-headingColor font-bold text-[24px]
+    leading-9 mt-[-10px] mb-3 text-center"
+          >
+            Experiences
+          </h2>
+          {formData.experiences?.map((item, index) => (
+            <div key={index}>
+              <div className="mt-5">
+                <div className=" grid grid-cols-2 gap-5">
+                  <div>
+                    <p className="form_label">Starting Date*</p>
+                    <input
+                      type="date"
+                      name="startingDate"
+                      value={item.startingDate}
+                      className="form_input"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="form_label">Ending Date*</p>
+                    <input
+                      type="date"
+                      name="endingDate"
+                      value={item.endingDate}
+                      className="form_input"
+                    />
+                  </div>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-5">
+                  <div>
+                    <p className="form_label">Position*</p>
+                    <input
+                      type="text"
+                      name="position"
+                      value={item.position}
+                      className="form_input"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="form_label">Hospital*</p>
+                    <input
+                      type="text"
+                      name="hospital"
+                      value={item.hospital}
+                      className="form_input"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  className="bg-red-600 p-2 rounded-full text-white text-[18px]
+                mt-2 mb-[30px] cursor-pointer"
+                >
+                  <AiOutlineDelete />
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
+            Add Experiences
+          </button>
+        </div>
+
+        <div className="mb-5">
+          <h2
+            className="text-headingColor font-bold text-[24px]
+    leading-9 mt-[-10px] mb-3 text-center"
+          >
+            Time Slots
+          </h2>
+          {formData.timeSlots?.map((item, index) => (
+            <div key={index}>
+              <div className="mt-5">
+                <div className=" grid grid-cols-2 md:grid-cols-4 mb-[30px] gap-5">
+                  <div>
+                    <p className="form_label">Day*</p>
+                    <select
+                      name="day"
+                      value={item.day}
+                      className="form_input py-3.5"
+                    >
+                      <option value="">Select</option>
+                      <option value="saturday">Saturday</option>
+                      <option value="sunday">Sunday</option>
+                      <option value="monday">Monday</option>
+                      <option value="tuesday">Tuesday</option>
+                      <option value="wednesday">Wednesday</option>
+                      <option value="thursday">Thursday</option>
+                      <option value="friday">Friday</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <p className="form_label">Starting Time*</p>
+                    <input
+                      type="time"
+                      name="startingTime"
+                      value={item.startingTime}
+                      className="form_input"
+                    />
+                  </div>
+                  <div>
+                    <p className="form_label">Ending Time*</p>
+                    <input
+                      type="time"
+                      name="endingTime"
+                      value={item.endingTime}
+                      className="form_input"
+                    />
+                  </div>
+
+                  <div className="flex items-center">
+                    <button
+                      className="bg-red-600 p-2 rounded-full text-white text-[18px]
+                      mb-[30px] cursor-pointer mt-11"
+                    >
+                      <AiOutlineDelete />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
+            Add TimeSlot
+          </button>
+        </div>
+
+        <div className="mb-5">
+          <h2 className="form_label">About</h2>
+          <textarea
+            name="about"
+            rows={5}
+            value={formData.about}
+            placeholder="Write about you"
+            onChange={handleInputChange}
+            className="form_input"
+          ></textarea>
+        </div>
+
+        <div className="mb-5 flex items-center gap-3"></div>
       </form>
     </div>
   );
