@@ -72,7 +72,7 @@ const Testimonial = () => {
       <SwiperSlide>
         <div className="py-[30px] px-5 rounded-[13px]">
           <div className="flex items-center gap-[13px]">
-            <img src={patientAvatar2} alt="" className="w-12 h-11 rounded-md"/>
+            <img src={patientAvatar2} alt="" className="w-12 h-12 rounded-md"/>
             <div>
               <h4 className="text-[18px] leading-[30px] 
               font-semibold text-headingColor">Michael Lopez</h4>
