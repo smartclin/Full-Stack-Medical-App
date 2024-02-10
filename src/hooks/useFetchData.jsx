@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { token } from "../../config";
 
 const useFetchData = (url) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -12,7 +12,7 @@ const useFetchData = (url) => {
 
       try {
         const res = await fetch(url, {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${token()}` },
         });
         const result = await res.json();
 
@@ -24,7 +24,6 @@ const useFetchData = (url) => {
 
         setData(result.data);
         setLoading(false);
-
       } catch (err) {
         setLoading(false);
         setError(err.message || "Something went wrong with the request!");
@@ -42,4 +41,3 @@ const useFetchData = (url) => {
 };
 
 export default useFetchData;
-

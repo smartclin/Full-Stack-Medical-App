@@ -6,11 +6,17 @@ import imgPerfil from "../../assets/images/about.png";
 import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "./../../pages/Doctors/DoctorAbout";
 import Profile from "./Profile";
+import Appointments from "./Appointments";
 
 const Dashboard = () => {
   const { data } = useGetProfile(`${BASE_URL}/doctors/profile/me`);
 
   const [tab, setTab] = useState("overview");
+
+  /* Comprobamos si los datos están cargados
+  if (!data) {
+    return <div>Loading...</div>;
+  }*/
 
   return (
     <section>
@@ -65,7 +71,7 @@ const Dashboard = () => {
                         className="text-[22px] leading-9 font-bold 
                        text-headingColor mt-3"
                       >
-                        Muhibur Rahman
+                        Dr. Muhibur Rahman
                       </h3>
 
                       <div className="flex items-center gap-[6px]">
@@ -80,7 +86,7 @@ const Dashboard = () => {
                           className="text-textColor
                          text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold"
                         >
-                          (233)
+                          (125)
                         </span>
                       </div>
                     </div>
@@ -93,8 +99,9 @@ const Dashboard = () => {
                   />
                 </div>
               )}
-              {tab === "appointments" && <div>appointments</div>}
-              {tab === "settings" && <Profile />}
+              {tab === "settings" && <Profile doctorData={data}/>}
+              {tab === "appointments" && <Appointments Appointments={data.appointments}/>}
+              
             </div>
           </div>
         </div>
@@ -104,3 +111,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+

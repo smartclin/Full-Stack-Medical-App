@@ -1,30 +1,154 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
+import uploadImageToCloudinary from "../../utils/uploadCloudinary";
+import { BASE_URL, token } from "../../../config";
+import { toast } from "react-toastify";
 
-const Profile = () => {
+
+const Profile = ({ doctorData }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    password: "",
     phone: "",
     bio: "",
     gender: "",
     specialization: "",
     ticketPrice: 0,
-    qualifications: [
-      { startingDate: "", endingDate: "", degree: "", university: "" },
-    ],
-    experiences: [
-      { startingDate: "", endingDate: "", position: "", hospital: "" },
-    ],
-    timeSlots: [{ day: "", startingTime: "", endingTime: "" }],
+    qualifications: [],
+    experiences: [],
+    timeSlots: [],
     about: "",
+    photo: null,
   });
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleFileInputChange = async (event) => {
+    const file = event.target.files[0];
+    const data = await uploadImageToCloudinary(file);
+
+    setFormData({ ...formData, photo: data?.url });
+  };
+
+  const updateProfileHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw Error(result.message);
+      }
+
+      toast.success(result.message);
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  // reusable function for adding item
+  const addItem = (key, item) => {
+    setFormData((preventDefault) => ({
+      ...preventDefault,
+      [key]: [...preventDefault[key], item],
+    }));
+  };
+
+  //reusable input change function
+  const handleReusableInputChangeFunc = (key, index, event) => {
+    const { name, value } = event.target;
+
+    setFormData((prevFormData) => {
+      const updateItems = [...prevFormData[key]];
+
+      updateItems[index][name] = value;
+      return {
+        ...prevFormData,
+        [key]: updateItems,
+      };
+    });
+  };
+
+  //reusable function for deleting item
+  const deleteItem = (key, index) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [key]: prevFormData[key].filter((_, i) => i !== index),
+    }));
+  };
+
+  const addQualification = (e) => {
+    e.preventDefault();
+
+    addItem("qualifications", {
+      startingDate: "",
+      endingDate: "",
+      degree: "PHD",
+      university: "Dhaka Medical College",
+    });
+  };
+
+  const handleQualificationChange = (event, index) => {
+    handleReusableInputChangeFunc("qualifications", index, event);
+  };
+
+  const deleteQualification = (e, index) => {
+    e.preventDefault();
+    deleteItem("qualifications", index);
+  };
+
+  const addExperience = (e) => {
+    e.preventDefault();
+
+    addItem("experiences", {
+      startingDate: "",
+      endingDate: "",
+      position: "Senior Surgeon",
+      hospital: "Dhaka Medical",
+    });
+  };
+
+  const handleExpierenceChange = (event, index) => {
+    handleReusableInputChangeFunc("experiences", index, event);
+  };
+
+  const deleteExperience = (e, index) => {
+    e.preventDefault();
+    deleteItem("experiences", index);
+  };
+
+  const addTimeSlot = (e) => {
+    e.preventDefault();
+
+    addItem("timeSlots", {
+      day: "Sunday",
+      startingDate: "10:00",
+      endingDate: "4:30",
+    });
+  };
+
+  const handleTimeSlotChange = (event, index) => {
+    handleReusableInputChangeFunc("timeSlots", index, event);
+  };
+
+  const deleteTimeSlot = (e, index) => {
+    e.preventDefault();
+    deleteItem("timeSlots", index);
+  };
   return (
     <div>
       <h2
@@ -145,6 +269,7 @@ const Profile = () => {
                       name="startingDate"
                       value={item.startingDate}
                       className="form_input"
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
 
@@ -155,6 +280,7 @@ const Profile = () => {
                       name="endingDate"
                       value={item.endingDate}
                       className="form_input"
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                 </div>
@@ -166,6 +292,7 @@ const Profile = () => {
                       name="degree"
                       value={item.degree}
                       className="form_input"
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
 
@@ -176,11 +303,13 @@ const Profile = () => {
                       name="university"
                       value={item.university}
                       className="form_input"
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                 </div>
 
                 <button
+                  onClick={(e) => deleteQualification(e, index)}
                   className="bg-red-600 p-2 rounded-full text-white text-[18px]
                 mt-2 mb-[30px] cursor-pointer"
                 >
@@ -190,8 +319,11 @@ const Profile = () => {
             </div>
           ))}
 
-          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
-            Add Qualifications
+          <button
+            onClick={addQualification}
+            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
+          >
+            Add Qualification
           </button>
         </div>
 
@@ -213,6 +345,7 @@ const Profile = () => {
                       name="startingDate"
                       value={item.startingDate}
                       className="form_input"
+                      onChange={(e) => handleExpierenceChange(e, index)}
                     />
                   </div>
 
@@ -223,6 +356,7 @@ const Profile = () => {
                       name="endingDate"
                       value={item.endingDate}
                       className="form_input"
+                      onChange={(e) => handleExpierenceChange(e, index)}
                     />
                   </div>
                 </div>
@@ -234,6 +368,7 @@ const Profile = () => {
                       name="position"
                       value={item.position}
                       className="form_input"
+                      onChange={(e) => handleExpierenceChange(e, index)}
                     />
                   </div>
 
@@ -244,11 +379,13 @@ const Profile = () => {
                       name="hospital"
                       value={item.hospital}
                       className="form_input"
+                      onChange={(e) => handleExpierenceChange(e, index)}
                     />
                   </div>
                 </div>
 
                 <button
+                  onClick={(e) => deleteExperience(e, index)}
                   className="bg-red-600 p-2 rounded-full text-white text-[18px]
                 mt-2 mb-[30px] cursor-pointer"
                 >
@@ -258,8 +395,11 @@ const Profile = () => {
             </div>
           ))}
 
-          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
-            Add Experiences
+          <button
+            onClick={addExperience}
+            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
+          >
+            Add Experience
           </button>
         </div>
 
@@ -280,6 +420,7 @@ const Profile = () => {
                       name="day"
                       value={item.day}
                       className="form_input py-3.5"
+                      onChange={(e) => handleTimeSlotChange(e, index)}
                     >
                       <option value="">Select</option>
                       <option value="saturday">Saturday</option>
@@ -299,6 +440,7 @@ const Profile = () => {
                       name="startingTime"
                       value={item.startingTime}
                       className="form_input"
+                      onChange={(e) => handleTimeSlotChange(e, index)}
                     />
                   </div>
                   <div>
@@ -308,11 +450,16 @@ const Profile = () => {
                       name="endingTime"
                       value={item.endingTime}
                       className="form_input"
+                      onChange={(e) => handleTimeSlotChange(e, index)}
                     />
                   </div>
 
-                  <div className="flex items-center">
+                  <div
+                    onClick={(e) => deleteTimeSlot(e, index)}
+                    className="flex items-center"
+                  >
                     <button
+                      onClick={(e) => deleteExperience(e, index)}
                       className="bg-red-600 p-2 rounded-full text-white text-[18px]
                       mb-[30px] cursor-pointer mt-11"
                     >
@@ -324,7 +471,10 @@ const Profile = () => {
             </div>
           ))}
 
-          <button className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
+          <button
+            onClick={addTimeSlot}
+            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
+          >
             Add TimeSlot
           </button>
         </div>
@@ -341,7 +491,51 @@ const Profile = () => {
           ></textarea>
         </div>
 
-        <div className="mb-5 flex items-center gap-3"></div>
+        <div className="mb-5 flex items-center gap-3">
+          {formData.photo && (
+            <figure
+              className="w-[60px] h-[60px] rounded-full border-2 border-solid
+                  border-primaryColor flex items-center justify-center"
+            >
+              <img
+                src={formData.photo}
+                alt=""
+                className="w-full rounded-full"
+              ></img>
+            </figure>
+          )}
+
+          <div className="relative w-[130px] h-[50px]">
+            <input
+              type="file"
+              name="photo"
+              id="customFile"
+              onChange={handleFileInputChange}
+              accept=".jpg, .png"
+              className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+            />
+
+            <label
+              htmlFor="customFile"
+              className="absolute top-0 left-0 w-full h-full flex items-center px-[0.75rem] py-[0.375rem]
+                   text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
+                   rounded-lg truncate cursor-pointer"
+            >
+              Upload Photo
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-7">
+          <button
+            type="submit"
+            onClick={updateProfileHandler}
+            className="bg-primaryColor text-white text-[18px]
+            leading-[30px] w-full py-3 px-4 rounded-lg"
+          >
+            Update Profile
+          </button>
+        </div>
       </form>
     </div>
   );

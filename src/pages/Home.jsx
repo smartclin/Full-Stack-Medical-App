@@ -43,13 +43,15 @@ const Home = () => {
                   <br /> eius molestiae rem.
                 </p>
 
-                <button
+                
+                  <Link
+                  to="/doctors"
                   className="btn w-[350px] px-2 py-2 flex justify-center 
                   items-center max-sm:w-[290px] max-sm:py-2 max-sm:m-auto
                   max-sm:mt-5"
-                >
-                  Request an Appoinment
-                </button>
+                  >Request an Appoinment</Link>
+                  
+
               </div>
 
               {/*=== hero counter ===*/}
