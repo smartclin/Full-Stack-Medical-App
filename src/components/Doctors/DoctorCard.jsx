@@ -65,14 +65,14 @@ const DoctorCard = ({ doctor }) => {
        <div className="mt-[18px] lg:mt-5 flex items-center justify-between">
              <div>
                    <h3 className="text-[16px] leading-7 lg:text-[18px] 
-                     lg:leading-[30px] font-semibold text-headingColor">
+                     lg:leading-[30px] font-semibold text-headingColor ml-[-83px]">
                      +{totalPatients} patients</h3>
                    <p className="text-[14px] leading-6 font-[400] text-textColor
                    ">At {hospital}</p>
              </div>
 
              <Link 
-                 to='/doctors'
+                 to='/doctors/1'
                  className="w-[44px] h-[44px] rounded-full border
                  border-solid border-[#181A1E]
                  flex items-center justify-center group hover:bg-primaryColor

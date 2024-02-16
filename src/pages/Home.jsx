@@ -10,7 +10,6 @@ import avatarIcon from "../assets/images/avatar-icon.png";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import About from "../components/About/About";
-import ServiceList from "../components/Services/ServiceList";
 import faqImg from "../assets/images/faq-img.png" ;
 import FaqList from "../components/Faq/FaqList";
 
@@ -44,13 +43,15 @@ const Home = () => {
                   <br /> eius molestiae rem.
                 </p>
 
-                <button
+                
+                  <Link
+                  to="/doctors"
                   className="btn w-[350px] px-2 py-2 flex justify-center 
                   items-center max-sm:w-[290px] max-sm:py-2 max-sm:m-auto
                   max-sm:mt-5"
-                >
-                  Request an Appoinment
-                </button>
+                  >Request an Appoinment</Link>
+                  
+
               </div>
 
               {/*=== hero counter ===*/}
@@ -214,22 +215,6 @@ const Home = () => {
       {/*=== About Section start ===*/}
       <About />
       {/*=== About Section End ===*/}
-
-      {/*=== Services Section ===*/}
-      <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our medical services</h2>
-            <p className="text_para text-center">
-              World-class care for everyone. Our health System offers unmatched,
-              expert health care.
-            </p>
-          </div>
-
-          <ServiceList />
-        </div>
-      </section>
-      {/*=== Services Section end ===*/}
 
       {/*=== feature section ===*/}
       <section>
