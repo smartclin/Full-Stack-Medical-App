@@ -5,7 +5,7 @@
    <h1><b>Full Stack Medical App</b></h1>
 </div>
 
-<img src="./src/assets/images/medical.jpg"></img>
+<img src="./src/assets/images/medical.jpg" width="100%"></img>
 
 # 📗 Table of Contents
 
