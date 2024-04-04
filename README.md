@@ -5,6 +5,8 @@
    <h1><b>Full Stack Medical App</b></h1>
 </div>
 
+<img src="./src/assets/images/medical.jpg"></img>
+
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
