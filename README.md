@@ -36,8 +36,6 @@
 
 > At Medicare, we pride ourselves on offering a seamless and efficient user experience, from appointment booking to the payment process. We have integrated a Stripe payment gateway from the ground up, ensuring secure and hassle-free transactions.
 
-[Here](https://drive.google.com/file/) is the link to the video presentation.
-
 ---
 
 # 🛠 Built With <a name="built-with"></a>
