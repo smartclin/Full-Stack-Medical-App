@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  password     String
+  name         String
+  phone        Int
+  photo        String
+  role         String        @default("patient") @map("role")
+  gender       String        @map("gender")
+  bloodType    String        @map("bloodType")
+  appointments Appointment[]
+  reviews      Review[]      @relation("UserReviews")
+}
+
+model Review {
+  id         Int      @id @default(autoincrement())
+  doctor     Doctor   @relation(fields: [doctorId], references: [id])
+  doctorId   Int
+  user       User     @relation("UserReviews", fields: [userId], references: [id])
+  userId     Int
+  reviewText String
+  rating     Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Doctor {
+  id             Int                  @id @default(autoincrement())
+  email          String               @unique
+  password       String
+  name           String
+  phone          Int
+  photo          String
+  ticketPrice    Int
+  role           String
+  specialization String               @map("specialization")
+  qualifications String[]             @map("qualifications")
+  experiences    String[]             @map("experiences")
+  bio            String               @map("bio")
+  about          String               @map("about")
+  timeSlots      String[]             @map("timeSlots")
+  reviews        Review[]
+  averageRating  Float                @default(0) @map("averageRating")
+  totalRating    Int                  @default(0) @map("totalRating")
+  isApproved     DoctorApprovalStatus @default(pending)
+  appointments   Appointment[]
+}
+
+model Appointment {
+  id              Int      @id @default(autoincrement())
+  doctor          Doctor   @relation(fields: [doctorId], references: [id])
+  doctorId        Int
+  user            User     @relation(fields: [userId], references: [id])
+  userId          Int
+  ticketPrice     Decimal  @default(0)
+  appointmentDate DateTime
+  status          String   @default("pending")
+  isPaid          Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+enum DoctorApprovalStatus {
+  pending
+  approved
+  cancelled
+}

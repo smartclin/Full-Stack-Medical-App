@@ -1,5 +1,5 @@
-import { formateDate } from "../../utils/formateDate";
 import PropTypes from 'prop-types';
+import { formateDate } from '../../utils/formateDate';
 
 const Appointments = ({ appointments }) => {
   return (
@@ -27,21 +27,12 @@ const Appointments = ({ appointments }) => {
       <tbody>
         {appointments?.map((item) => (
           <tr key={item._id}>
-            <th
-              scope="row"
-              className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
-            >
-              <img
-                src={item.user.photo}
-                className="w-10 h-10 rounded-full"
-                alt=""
-              />
+            <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
+              <img src={item.user.photo} className="w-10 h-10 rounded-full" alt="" />
 
               <div className="pl-3">
                 <div className="text-base font-semibold">{item.user.name}</div>
-                <div className="text-normal text-gray-500">
-                  {item.user.email}
-                </div>
+                <div className="text-normal text-gray-500">{item.user.email}</div>
               </div>
             </th>
 
@@ -49,17 +40,13 @@ const Appointments = ({ appointments }) => {
             <td className="px-6 py-4">
               {item.isPaid && (
                 <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2">
-                    Paid
-                  </div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2">Paid</div>
                 </div>
               )}
 
               {!item.isPaid && (
                 <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2">
-                    Unpaid
-                  </div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2">Unpaid</div>
                 </div>
               )}
             </td>
@@ -73,7 +60,7 @@ const Appointments = ({ appointments }) => {
 };
 
 Appointments.propTypes = {
-    appointments: PropTypes.array.isRequired,
-  };
-  
+  appointments: PropTypes.array.isRequired,
+};
+
 export default Appointments;

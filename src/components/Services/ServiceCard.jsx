@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import { BsArrowRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ item, index }) => {
   const { name, desc, bgColor, textColor } = item;
@@ -16,8 +16,8 @@ const ServiceCard = ({ item, index }) => {
         style={{
           background: `${bgColor}`,
           color: `${textColor}`,
-          borderRadius: "6px 0 0 6px",
-          marginBottom: "2vh",
+          borderRadius: '6px 0 0 6px',
+          marginBottom: '2vh',
         }}
       >
         {index + 1}

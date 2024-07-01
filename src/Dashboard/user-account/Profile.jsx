@@ -1,23 +1,24 @@
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
+import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { BASE_URL } from '../../../config';
+import { token } from '../../../config';
+import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 /* eslint-disable no-unused-vars */
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import uploadImageToCloudinary from "../../utils/uploadCloudinary";
-import { BASE_URL, token } from "../../../config";
-import { toast } from "react-toastify";
-import { HashLoader } from "react-spinners";
-
 const Profile = ({ user }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
     photo: null,
-    gender: "",
-    bloodType: "",
+    gender: '',
+    bloodType: '',
   });
 
   const navigate = useNavigate();
@@ -50,9 +51,9 @@ const Profile = ({ user }) => {
     setLoading(true);
     try {
       const res = await fetch(`${BASE_URL}/users/${user._id}`, {
-        method: "put",
+        method: 'put',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
@@ -66,7 +67,7 @@ const Profile = ({ user }) => {
 
       setLoading(false);
       toast.success(message);
-      navigate("/users/profile/me");
+      navigate('/users/profile/me');
     } catch (err) {
       toast.error(err.message);
       setLoading(false);
@@ -158,11 +159,7 @@ const Profile = ({ user }) => {
               className="w-[60px] h-[60px] rounded-full border-2 border-solid
                   border-primaryColor flex items-center justify-center"
             >
-              <img
-                src={formData.photo}
-                alt=""
-                className="w-full rounded-full"
-              ></img>
+              <img src={formData.photo} alt="" className="w-full rounded-full"></img>
             </figure>
           )}
 
@@ -194,11 +191,7 @@ const Profile = ({ user }) => {
             className="w-full bg-primaryColor text-white
             text-[18px] leading-[30px] rounded-lg px-4 py-3"
           >
-            {loading ? (
-              <HashLoader size={25} color="#ffffff" />
-            ) : (
-              "Update your profile"
-            )}
+            {loading ? <HashLoader size={25} color="#ffffff" /> : 'Update your profile'}
           </button>
         </div>
       </form>
@@ -208,12 +201,12 @@ const Profile = ({ user }) => {
 
 Profile.propTypes = {
   user: PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  _id: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired,
-  gender: PropTypes.string.isRequired,
-  bloodType: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    bloodType: PropTypes.string.isRequired,
   }).isRequired,
 };
 

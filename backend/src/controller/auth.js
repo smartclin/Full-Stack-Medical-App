@@ -1,34 +1,30 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-import User from "../models/UserSchema.js";
-import Doctor from "../models/DoctorSchema.js";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-const generateToken = user => {
-  return jwt.sign(
-    { id: user._id, role: user.role },
-    process.env.JWT_SECRET_KEY,
-    {
-      expiresIn: "15d",
-    }
-  );
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const asyncHandler = require('express-async-handler');
+
+const generateToken = (user) => {
+  return jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET_KEY, {
+    expiresIn: '15d',
+  });
 };
 
-export const register = async (req, res) => {
+const register = async (req, res) => {
   const { email, password, name, role, photo, gender } = req.body;
 
   try {
     // Verificar si el usuario ya existe
     let user = null;
-    if (role == "patient") {
+    if (role == 'patient') {
       user = await User.findOne({ email });
-    } else if (role == "doctor") {
+    } else if (role == 'doctor') {
       user = await Doctor.findOne({ email });
     }
 
     if (user) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: 'User already exists' });
     }
 
     // Hash de la contraseña
@@ -36,7 +32,7 @@ export const register = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, salt);
 
     // Crear el usuario según el rol
-    if (role === "patient") {
+    if (role === 'patient') {
       user = new User({
         name,
         email,
@@ -45,7 +41,7 @@ export const register = async (req, res) => {
         gender,
         role,
       });
-    } else if (role === "doctor") {
+    } else if (role === 'doctor') {
       user = new Doctor({
         name,
         email,
@@ -58,18 +54,14 @@ export const register = async (req, res) => {
 
     await user.save();
 
-    res
-      .status(200)
-      .json({ success: true, message: "User successfully created" });
+    res.status(200).json({ success: true, message: 'User successfully created' });
   } catch (err) {
     console.error(err);
-    res
-      .status(500)
-      .json({ success: false, message: "Internal server error, Try again" });
+    res.status(500).json({ success: false, message: 'Internal server error, Try again' });
   }
 };
 
-export const login = async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -88,38 +80,32 @@ export const login = async (req, res) => {
 
     // Verificar si el usuario existe
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: 'User not found' });
     }
 
     // Comparar la contraseña
-    const isPasswordMatch = await bcrypt.compare(
-      password, 
-      user.password
-    );
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
 
     if (!isPasswordMatch) {
-      return res
-        .status(400)
-        .json({ status: false, message: "Invalid Credentials" });
+      return res.status(400).json({ status: false, message: 'Invalid Credentials' });
     }
-
 
     // Obtener el token
     const token = generateToken(user);
-    
+
     // Excluir campos sensibles del objeto del usuario
     const { password: userPassword, role, appointments, ...rest } = user._doc;
 
     res.status(200).json({
       status: true,
-      message: "Successfully logged in",
+      message: 'Successfully logged in',
       token,
       data: { ...rest },
       role,
     });
-
   } catch (err) {
     //console.error(err);
-    res.status(500).json({ status: false, message: "Failed to login" });
+    res.status(500).json({ status: false, message: 'Failed to login' });
   }
 };
+module.exports = { register, login };

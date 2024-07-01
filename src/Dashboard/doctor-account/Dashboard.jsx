@@ -1,17 +1,17 @@
-import useGetProfile from "../../hooks/useFetchData";
-import { BASE_URL } from "../../../config";
-import Tabs from "./Tabs";
-import { useState } from "react";
-import imgPerfil from "../../assets/images/about.png";
-import starIcon from "../../assets/images/Star.png";
-import DoctorAbout from "./../../pages/Doctors/DoctorAbout";
-import Profile from "./Profile";
-import Appointments from "./Appointments";
+import { useState } from 'react';
+import { BASE_URL } from '../../../config';
+import imgPerfil from '../../assets/images/about.png';
+import starIcon from '../../assets/images/Star.png';
+import useGetProfile from '../../hooks/useFetchData';
+import DoctorAbout from './../../pages/Doctors/DoctorAbout';
+import Appointments from './Appointments';
+import Profile from './Profile';
+import Tabs from './Tabs';
 
 const Dashboard = () => {
   const { data } = useGetProfile(`${BASE_URL}/doctors/profile/me`);
 
-  const [tab, setTab] = useState("overview");
+  const [tab, setTab] = useState('overview');
 
   /* Comprobamos si los datos están cargados
   if (!data) {
@@ -45,13 +45,12 @@ const Dashboard = () => {
 
               <span className="sr-only">Info</span>
               <div className="ml-3 text-sm font-medium">
-                To get approval please complete your profile. We will review
-                manually and approve within 3days.
+                To get approval please complete your profile. We will review manually and approve within 3days.
               </div>
             </div>
 
             <div className="mt-8">
-              {tab === "overview" && (
+              {tab === 'overview' && (
                 <div>
                   <div className="flex items-center gap-4 mb-10">
                     <figure className="max-w-[200px] max-h-[200px]">
@@ -99,9 +98,8 @@ const Dashboard = () => {
                   />
                 </div>
               )}
-              {tab === "settings" && <Profile doctorData={data}/>}
-              {tab === "appointments" && <Appointments Appointments={data.appointments}/>}
-              
+              {tab === 'settings' && <Profile doctorData={data} />}
+              {tab === 'appointments' && <Appointments Appointments={data.appointments} />}
             </div>
           </div>
         </div>
@@ -111,5 +109,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-

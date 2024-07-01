@@ -1,10 +1,9 @@
-import DoctorCard from "./DoctorCard";
-import { BASE_URL } from "../../../config";
-import useFetchData from "../../hooks/useFetchData";
+import { BASE_URL } from '../../../config';
+import useFetchData from '../../hooks/useFetchData';
+import DoctorCard from './DoctorCard';
 
 const DoctorList = () => {
-  
-const {data:doctors} = useFetchData(`${BASE_URL}/doctors`);
+  const { data: doctors } = useFetchData(`${BASE_URL}/doctors`);
 
   return (
     <div

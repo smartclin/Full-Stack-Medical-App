@@ -1,26 +1,25 @@
+import { AiOutlineDelete } from 'react-icons/ai';
+import { toast } from 'react-toastify';
+import { useState } from 'react';
+import { BASE_URL } from '../../../config';
+import { token } from '../../../config';
+import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
-import { AiOutlineDelete } from "react-icons/ai";
-import uploadImageToCloudinary from "../../utils/uploadCloudinary";
-import { BASE_URL, token } from "../../../config";
-import { toast } from "react-toastify";
-
-
 const Profile = ({ doctorData }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    phone: "",
-    bio: "",
-    gender: "",
-    specialization: "",
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+    bio: '',
+    gender: '',
+    specialization: '',
     ticketPrice: 0,
     qualifications: [],
     experiences: [],
     timeSlots: [],
-    about: "",
+    about: '',
     photo: null,
   });
 
@@ -40,9 +39,9 @@ const Profile = ({ doctorData }) => {
 
     try {
       const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
@@ -94,60 +93,60 @@ const Profile = ({ doctorData }) => {
   const addQualification = (e) => {
     e.preventDefault();
 
-    addItem("qualifications", {
-      startingDate: "",
-      endingDate: "",
-      degree: "PHD",
-      university: "Dhaka Medical College",
+    addItem('qualifications', {
+      startingDate: '',
+      endingDate: '',
+      degree: 'PHD',
+      university: 'Dhaka Medical College',
     });
   };
 
   const handleQualificationChange = (event, index) => {
-    handleReusableInputChangeFunc("qualifications", index, event);
+    handleReusableInputChangeFunc('qualifications', index, event);
   };
 
   const deleteQualification = (e, index) => {
     e.preventDefault();
-    deleteItem("qualifications", index);
+    deleteItem('qualifications', index);
   };
 
   const addExperience = (e) => {
     e.preventDefault();
 
-    addItem("experiences", {
-      startingDate: "",
-      endingDate: "",
-      position: "Senior Surgeon",
-      hospital: "Dhaka Medical",
+    addItem('experiences', {
+      startingDate: '',
+      endingDate: '',
+      position: 'Senior Surgeon',
+      hospital: 'Dhaka Medical',
     });
   };
 
   const handleExpierenceChange = (event, index) => {
-    handleReusableInputChangeFunc("experiences", index, event);
+    handleReusableInputChangeFunc('experiences', index, event);
   };
 
   const deleteExperience = (e, index) => {
     e.preventDefault();
-    deleteItem("experiences", index);
+    deleteItem('experiences', index);
   };
 
   const addTimeSlot = (e) => {
     e.preventDefault();
 
-    addItem("timeSlots", {
-      day: "Sunday",
-      startingDate: "10:00",
-      endingDate: "4:30",
+    addItem('timeSlots', {
+      day: 'Sunday',
+      startingDate: '10:00',
+      endingDate: '4:30',
     });
   };
 
   const handleTimeSlotChange = (event, index) => {
-    handleReusableInputChangeFunc("timeSlots", index, event);
+    handleReusableInputChangeFunc('timeSlots', index, event);
   };
 
   const deleteTimeSlot = (e, index) => {
     e.preventDefault();
-    deleteItem("timeSlots", index);
+    deleteItem('timeSlots', index);
   };
   return (
     <div>
@@ -209,12 +208,7 @@ const Profile = ({ doctorData }) => {
           <div className="grid grid-cols-3 gap-5 mb-[30px]">
             <div>
               <p className="form_label">Gender*:</p>
-              <select
-                name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                className="form_input py-3.5"
-              >
+              <select name="gender" value={formData.gender} onChange={handleInputChange} className="form_input py-3.5">
                 <option value="">Select</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -319,10 +313,7 @@ const Profile = ({ doctorData }) => {
             </div>
           ))}
 
-          <button
-            onClick={addQualification}
-            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
-          >
+          <button onClick={addQualification} className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
             Add Qualification
           </button>
         </div>
@@ -395,10 +386,7 @@ const Profile = ({ doctorData }) => {
             </div>
           ))}
 
-          <button
-            onClick={addExperience}
-            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
-          >
+          <button onClick={addExperience} className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
             Add Experience
           </button>
         </div>
@@ -454,10 +442,7 @@ const Profile = ({ doctorData }) => {
                     />
                   </div>
 
-                  <div
-                    onClick={(e) => deleteTimeSlot(e, index)}
-                    className="flex items-center"
-                  >
+                  <div onClick={(e) => deleteTimeSlot(e, index)} className="flex items-center">
                     <button
                       onClick={(e) => deleteExperience(e, index)}
                       className="bg-red-600 p-2 rounded-full text-white text-[18px]
@@ -471,10 +456,7 @@ const Profile = ({ doctorData }) => {
             </div>
           ))}
 
-          <button
-            onClick={addTimeSlot}
-            className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
-          >
+          <button onClick={addTimeSlot} className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer">
             Add TimeSlot
           </button>
         </div>
@@ -497,11 +479,7 @@ const Profile = ({ doctorData }) => {
               className="w-[60px] h-[60px] rounded-full border-2 border-solid
                   border-primaryColor flex items-center justify-center"
             >
-              <img
-                src={formData.photo}
-                alt=""
-                className="w-full rounded-full"
-              ></img>
+              <img src={formData.photo} alt="" className="w-full rounded-full"></img>
             </figure>
           )}
 

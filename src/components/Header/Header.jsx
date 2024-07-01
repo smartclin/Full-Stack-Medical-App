@@ -1,33 +1,36 @@
-import { useEffect, useRef, useContext } from "react";
+import { BiMenu } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 import logo from '../../assets/images/logo.png';
-import { Link, NavLink } from 'react-router-dom';
-import { BiMenu } from "react-icons/bi";
-import { authContext } from "../../context/AuthContext";
+import { authContext } from '../../context/AuthContext';
 import '../../App.css';
 
 const navLinks = [
   {
     path: '/home',
-    display: 'Home'
+    display: 'Home',
   },
   {
     path: '/doctors',
-    display: 'Find a Doctor'
+    display: 'Find a Doctor',
   },
   {
     path: '/services',
-    display: 'Services'
+    display: 'Services',
   },
   {
     path: '/contact',
-    display: 'Contact'
+    display: 'Contact',
   },
 ];
 
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
-  const {user, role, token} = useContext(authContext);
+  const { user, role, token } = useContext(authContext);
 
   const handleStickyHeader = () => {
     const handleScroll = () => {
@@ -59,9 +62,8 @@ const Header = () => {
           {/* === LOGO ===*/}
           <div>
             <Link to="/">
-               <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" />
             </Link>
-            
           </div>
 
           {/** === menu ===*/}
@@ -71,7 +73,7 @@ const Header = () => {
                 <li key={index}>
                   <NavLink
                     to={link.path}
-                    className={navClass =>
+                    className={(navClass) =>
                       navClass.isActive
                         ? 'text-primaryColor text-[16px] leading-7 font-[600]'
                         : 'text-textColor text-[16px] leading-7 font-[600] hover:text-primaryColor'
@@ -87,31 +89,32 @@ const Header = () => {
           {/** === nav right ===*/}
           <div className="flex items-center space-x-2">
             {token && user ? (
-              <Link to={`${role === "doctor" ? "/doctors/profile/me" : "/users/profile/me"}`} className="flex items-center">
+              <Link
+                to={`${role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}
+                className="flex items-center"
+              >
                 <figure className="w-[50px] rounded-full cursor-pointer">
-                  <img src={user?.photo} className='w-full rounded-full' alt="Userphoto" />
+                  <img src={user?.photo} className="w-full rounded-full" alt="Userphoto" />
                 </figure>
                 {/*<h2 className="ml-5 font-bold">{user?.name}</h2>*/}
               </Link>
             ) : (
               <>
-                <Link to='/login'>
+                <Link to="/login">
                   <button className="bg-primaryColor py-2 px-3 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
                     Login
                   </button>
                 </Link>
-                <Link to='/register'>
+                <Link to="/register">
                   <button className="bg-primaryColor py-2 px-2 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
                     Signup
                   </button>
                 </Link>
               </>
             )}
-      
-            
 
             <span className="md:hidden" onClick={toggleMenu}>
-              <BiMenu className='w-6 h-6 cursor-pointer' />
+              <BiMenu className="w-6 h-6 cursor-pointer" />
             </span>
           </div>
         </div>

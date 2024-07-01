@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { token } from "../../config";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { token } from '../../config';
 
 const useFetchData = (url) => {
   const [data, setData] = useState({});
@@ -17,16 +18,14 @@ const useFetchData = (url) => {
         const result = await res.json();
 
         if (!res.ok) {
-          throw new Error(
-            result.message || "Something went wrong with the request!"
-          );
+          throw new Error(result.message || 'Something went wrong with the request!');
         }
 
         setData(result.data);
         setLoading(false);
       } catch (err) {
         setLoading(false);
-        setError(err.message || "Something went wrong with the request!");
+        setError(err.message || 'Something went wrong with the request!');
       }
     };
 

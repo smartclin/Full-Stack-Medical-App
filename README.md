@@ -28,11 +28,12 @@
   - [📝 License ](#-license-)
 
 ---
+
 # 📖 Full Stack Medical App <a name="about-project"></a>
 
-> Welcome to Medicare, your comprehensive platform for medical appointment management! At Medicare, we've created a unique experience    that allows you to easily book appointments with healthcare professionals, all from the convenience of our intuitive app.
+> Welcome to Medicare, your comprehensive platform for medical appointment management! At Medicare, we've created a unique experience that allows you to easily book appointments with healthcare professionals, all from the convenience of our intuitive app.
 
-> Our full stack platform uses cutting-edge technologies such as React JS for a dynamic and friendly user interface, TailwindCSS for a   modern and attractive design, Node JS and Express JS for a robust and efficient backend, and MongoDB for an agile and scalable database . In addition, we have implemented a secure authentication system with JWT to guarantee the privacy of your data.
+> Our full stack platform uses cutting-edge technologies such as React JS for a dynamic and friendly user interface, TailwindCSS for a modern and attractive design, Node JS and Express JS for a robust and efficient backend, and MongoDB for an agile and scalable database . In addition, we have implemented a secure authentication system with JWT to guarantee the privacy of your data.
 
 > At Medicare, we pride ourselves on offering a seamless and efficient user experience, from appointment booking to the payment process. We have integrated a Stripe payment gateway from the ground up, ensuring secure and hassle-free transactions.
 
@@ -115,7 +116,7 @@
 
 > -Clone this repository to your local machine using:
 
->  git clone https://github.com/maximoortelli/Full-Stack-Medical-App.git
+> git clone https://github.com/maximoortelli/Full-Stack-Medical-App.git
 
 > -Navigate to the project folder:
 
@@ -150,20 +151,19 @@
 
 👤 **Maximo Ortelli**
 
--   GitHub: [@MaximoOrtelli](https://github.com/maximoortelli)
--   LinkedIn: [MaximoOrtelli](https://www.linkedin.com/in/maximo-ortelli-rueda/)
+- GitHub: [@MaximoOrtelli](https://github.com/maximoortelli)
+- LinkedIn: [MaximoOrtelli](https://www.linkedin.com/in/maximo-ortelli-rueda/)
 
 👤 **Ivonne Benites**
 
--   GitHub: [@IvonneBenites](https://github.com/IvonneBenitesRodriguez)
--   LinkedIn: [IvonneBenites](https://www.linkedin.com/in/ivonnebenites/)
-
+- GitHub: [@IvonneBenites](https://github.com/IvonneBenitesRodriguez)
+- LinkedIn: [IvonneBenites](https://www.linkedin.com/in/ivonnebenites/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--   **Implement the named route find a doctor.**
+- **Implement the named route find a doctor.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,10 +188,10 @@
 > We thank Medicare for giving us the opportunity to work with Git and use the GitFlow workflow in a collaborative environment.
 
 > We thank our team of developers for successfully working towards a smooth and efficient user experience, from appointment
-  booking to the payment process.
+> booking to the payment process.
 
 > At Medicare, we combine advanced technology with modern design to provide you with a complete and effective solution. Your health, our
-  priority!
+> priority!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

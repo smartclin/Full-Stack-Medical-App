@@ -1,7 +1,6 @@
+import PropTypes from 'prop-types';
+import { formateDate } from '../../utils/formateDate';
 /* eslint-disable no-unused-vars */
-import { formateDate } from "../../utils/formateDate";
-import PropTypes from "prop-types";
-
 const DoctorAbout = ({ name, abou, experiences }) => {
   return (
     <div>
@@ -19,17 +18,14 @@ const DoctorAbout = ({ name, abou, experiences }) => {
           </span>
         </h3>
         <p className="text_para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sequi
-          sunt deserunt, quos incidunt facilis quasi molestias eligendi delectus
-          accusantium nam dolores dolore, tempora dolor? Minus blanditiis
-          consequatur amet ut.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sequi sunt deserunt, quos incidunt facilis
+          quasi molestias eligendi delectus accusantium nam dolores dolore, tempora dolor? Minus blanditiis consequatur
+          amet ut.
         </p>
       </div>
 
       <div className="mt-12">
-        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">
-          Education
-        </h3>
+        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">Education</h3>
 
         <ul className="pt-4">
           <li
@@ -41,14 +37,10 @@ const DoctorAbout = ({ name, abou, experiences }) => {
                 className="text-irisBlueColor text-[15px]
                         leading-6 font-semibold"
               >
-                {formateDate("9-03-2014")} - {formateDate("2-15-2016")}
+                {formateDate('9-03-2014')} - {formateDate('2-15-2016')}
               </span>
-              <p className="text-[15px] leading-6 font-medium text-textColor">
-                PHD in Surgeon
-              </p>
-              <p className="text-[14px] leading-6 font-bold text-textColor">
-                New Apollo Hospital, New York.
-              </p>
+              <p className="text-[15px] leading-6 font-medium text-textColor">PHD in Surgeon</p>
+              <p className="text-[14px] leading-6 font-bold text-textColor">New Apollo Hospital, New York.</p>
             </div>
           </li>
 
@@ -61,49 +53,35 @@ const DoctorAbout = ({ name, abou, experiences }) => {
                 className="text-irisBlueColor text-[15px]
                         leading-6 font-semibold"
               >
-                {formateDate("5-02-2010")} - {formateDate("9-13-2014")}
+                {formateDate('5-02-2010')} - {formateDate('9-13-2014')}
               </span>
-              <p className="text-[15px] leading-6 font-medium text-textColor">
-                PHD in Surgeon
-              </p>
-              <p className="text-[14px] leading-6 font-bold text-textColor">
-                New Apollo Hospital, New York.
-              </p>
+              <p className="text-[15px] leading-6 font-medium text-textColor">PHD in Surgeon</p>
+              <p className="text-[14px] leading-6 font-bold text-textColor">New Apollo Hospital, New York.</p>
             </div>
           </li>
         </ul>
       </div>
 
       <div className="mt-12">
-        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">
-          Experience
-        </h3>
+        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">Experience</h3>
 
         <ul className="grid sm:grid-cols-2 gap-[30px] pt-4 ">
           <li className="p-4 rounded bg-[#fff9ea]">
             <span className="text-yellowColor text-[15px] leading-6 font-semibold">
-              {formateDate("9-03-2014")} - {formateDate("2-15-2016")}
+              {formateDate('9-03-2014')} - {formateDate('2-15-2016')}
             </span>
-            <p className="text-[15px] leading-6 font-medium text-textColor">
-              Sr. Surgeon
-            </p>
+            <p className="text-[15px] leading-6 font-medium text-textColor">Sr. Surgeon</p>
 
-            <p className="text-[14px] leading-6 font-bold text-textColor">
-              New Apollo Hospital, New York.
-            </p>
+            <p className="text-[14px] leading-6 font-bold text-textColor">New Apollo Hospital, New York.</p>
           </li>
 
           <li className="p-4 rounded bg-[#fff9ea]">
             <span className="text-yellowColor text-[15px] leading-6 font-semibold">
-              {formateDate("9-03-2014")} - {formateDate("2-15-2016")}
+              {formateDate('9-03-2014')} - {formateDate('2-15-2016')}
             </span>
-            <p className="text-[15px] leading-6 font-medium text-textColor">
-              Sr. Surgeon
-            </p>
+            <p className="text-[15px] leading-6 font-medium text-textColor">Sr. Surgeon</p>
 
-            <p className="text-[14px] leading-6 font-bold text-textColor">
-              New Apollo Hospital, New York.
-            </p>
+            <p className="text-[14px] leading-6 font-bold text-textColor">New Apollo Hospital, New York.</p>
           </li>
         </ul>
       </div>
